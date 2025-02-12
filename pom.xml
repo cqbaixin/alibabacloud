@@ -12,6 +12,7 @@
     <modules>
         <module>order</module>
         <module>user</module>
+        <module>common</module>
     </modules>
     <parent>
         <groupId>org.springframework.cloud</groupId>
