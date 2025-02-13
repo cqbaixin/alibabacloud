@@ -1,4 +1,10 @@
 package man.act.bai.feign.user;
 
-public class UserFeignClient {
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@FeignClient(value = "UserServer")
+public interface UserFeignClient {
+    @GetMapping(path = "/")
+    String index();
 }

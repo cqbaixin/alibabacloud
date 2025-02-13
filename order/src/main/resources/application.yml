@@ -1,2 +1,11 @@
 server:
   port: 8800
+spring:
+  application:
+    name: OrderServer
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+feign:
+  sentinel:
+    enabled: true
