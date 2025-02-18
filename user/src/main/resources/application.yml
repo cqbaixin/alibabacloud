@@ -6,7 +6,7 @@ spring:
   profiles:
     active: dev
   config:
-    import: "optional:nacos:${spring.application.name}-${spring.profiles.active}.properties"
+    import: "optional:nacos:${spring.application.name}-${spring.profiles.active}.properties?refreshEnabled=true"
   nacos:
     username: nacos
     password: nacos
