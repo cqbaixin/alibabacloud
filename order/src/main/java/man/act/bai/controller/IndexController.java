@@ -1,5 +1,6 @@
 package man.act.bai.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import man.act.bai.feign.user.UserFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,9 +18,15 @@ public class IndexController {
     }
 
     @GetMapping(path = "/order/user")
-
     public String user()
     {
-        return  "orderIndex:"+userFeignClient.index();
+        return  "orderService:"+userFeignClient.index();
+    }
+
+    @GetMapping(path = "/Sentinel")
+    @SentinelResource(value = "Sentinel")
+    public String sentinel()
+    {
+        return  "orderService:Sentinel";
     }
 }

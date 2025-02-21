@@ -6,6 +6,11 @@ spring:
   cloud:
     nacos:
       server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: "127.0.0.1:8858"
+        heartbeatIntervalMs: 15000
+        port: 8719
 feign:
   sentinel:
     enabled: true

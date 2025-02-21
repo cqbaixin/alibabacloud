@@ -1,5 +1,6 @@
 package man.act.bai.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import man.act.bai.config.ActConfig;
 import man.act.bai.feign.order.OrderFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,8 @@ public class IndexController {
         return "userIndex:" + orderFeignClient.index();
     }
 
-
     @GetMapping(path = "/config")
+    @SentinelResource(value = "config")
     public String config(){
         return  actConfig.toString();
     }
