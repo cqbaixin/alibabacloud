@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: UserServer
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/m_user?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
   profiles:
     active: dev
   config:
@@ -24,3 +28,6 @@ spring:
 feign:
   sentinel:
     enabled: true
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
