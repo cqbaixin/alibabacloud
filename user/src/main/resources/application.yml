@@ -7,6 +7,21 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/m_user?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
     username: root
     password: root
+    druid:
+      connect-timeout: 3000
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      remove-abandoned: true
+      remove-abandoned-timeout: 180
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+    driver-class-name: com.mysql.cj.jdbc.Driver
   profiles:
     active: dev
   config:
